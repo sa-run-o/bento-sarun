@@ -1,5 +1,6 @@
 {
   "name": "bento-sarun",
+  "homepage": "https://sa-run-o.github.io/bento-sarun",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
