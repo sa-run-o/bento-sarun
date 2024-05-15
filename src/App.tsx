@@ -1,18 +1,16 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import Main from "./pages/Main";
 import Check from "./pages/Check";
 const App = () => {
   return (
     <SContainer>
-      <Router basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/check" element={<Check />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/check" element={<Check />} />
+      </Routes>
     </SContainer>
   );
 };
