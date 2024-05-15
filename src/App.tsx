@@ -14,6 +14,10 @@ const App = () => {
       path: "/check",
       element: <Check />,
     },
+    {
+      path: "/*",
+      element: <Main />,
+    },
   ]);
   return (
     <SContainer>

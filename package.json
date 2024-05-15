@@ -1,8 +1,8 @@
 {
   "name": "bento-sarun",
-  "homepage": "https://sa-run-o.github.io/bento-sarun",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sa-run-o.github.io/bento-sarun",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
