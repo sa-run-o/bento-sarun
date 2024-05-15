@@ -41,10 +41,13 @@
     -->
     <script type="text/javascript">
       (function () {
-        const redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect !== location.pathname) {
-          history.replaceState(null, null, redirect);
+        var redirect = window.location.search.match(/path=(.*)/);
+        if (redirect) {
+          window.history.replaceState(
+            null,
+            null,
+            decodeURIComponent(redirect[1])
+          );
         }
       })();
     </script>
