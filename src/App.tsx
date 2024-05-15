@@ -23,4 +23,13 @@ const App = () => {
 };
 
 export default App;
-const SContainer = styled.div``;
+const SContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;
