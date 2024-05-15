@@ -26,7 +26,7 @@ export default App;
 const SContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #050505;
   color: white;
   display: flex;
   justify-content: center;

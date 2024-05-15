@@ -65,11 +65,12 @@ const SContainer = styled.div`
     grid-gap: 10px;
   }
   .default-box {
-    background-color: #252525;
+    background-color: #0f0f0f;
     overflow: hidden;
     height: 100%;
     width: 100%;
     border-radius: 10px;
+    border: 1px solid #191919;
   }
   width: 93%;
   height: 93%;
