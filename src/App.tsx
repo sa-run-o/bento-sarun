@@ -1,27 +1,18 @@
 import React from "react";
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import Main from "./pages/Main";
 import Check from "./pages/Check";
 const App = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main />,
-    },
-    {
-      path: "/check",
-      element: <Check />,
-    },
-    {
-      path: "/*",
-      element: <Main />,
-    },
-  ]);
   return (
     <SContainer>
-      <RouterProvider router={router} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/check" element={<Check />} />
+        </Routes>
+      </Router>
     </SContainer>
   );
 };
