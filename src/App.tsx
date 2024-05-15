@@ -7,7 +7,7 @@ import Check from "./pages/Check";
 const App = () => {
   return (
     <SContainer>
-      <Router basename="/bento-sarun">
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/check" element={<Check />} />
