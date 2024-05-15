@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.f855e6bc.css",
-    "main.js": "./static/js/main.ba930e03.js",
-    "static/js/453.531224f6.chunk.js": "./static/js/453.531224f6.chunk.js",
-    "index.html": "./index.html",
-    "main.f855e6bc.css.map": "./static/css/main.f855e6bc.css.map",
-    "main.ba930e03.js.map": "./static/js/main.ba930e03.js.map",
-    "453.531224f6.chunk.js.map": "./static/js/453.531224f6.chunk.js.map"
+    "main.css": "/bento-sarun/static/css/main.f855e6bc.css",
+    "main.js": "/bento-sarun/static/js/main.3cb4f45f.js",
+    "static/js/453.531224f6.chunk.js": "/bento-sarun/static/js/453.531224f6.chunk.js",
+    "index.html": "/bento-sarun/index.html",
+    "main.f855e6bc.css.map": "/bento-sarun/static/css/main.f855e6bc.css.map",
+    "main.3cb4f45f.js.map": "/bento-sarun/static/js/main.3cb4f45f.js.map",
+    "453.531224f6.chunk.js.map": "/bento-sarun/static/js/453.531224f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.ba930e03.js"
+    "static/js/main.3cb4f45f.js"
   ]
 }
