@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { media } from "../utils/media";
+import Myself from "../components/Myself";
 
 const Main = () => {
   return (
@@ -32,7 +33,7 @@ const Main = () => {
           love
         </div>
         <div className="default-box" style={{ gridArea: "myself" }}>
-          myself
+          <Myself />
         </div>
         <div className="default-box" style={{ gridArea: "social-media" }}>
           social-media
