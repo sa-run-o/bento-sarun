@@ -1,212 +1,133 @@
-import styled from "styled-components";
+import React from "react";
 import { Icon } from "@iconify/react";
 import profile from "../assets/profile.png";
+
 const Myself = () => {
+  const chipCss =
+    "flex items-center justify-center w-fit bg-[rgb(25,25,25)] border border-[rgb(33,33,33)] text-[rgb(153,153,153)] px-2.5 py-1 text-xs rounded-md";
+  const containerCss = "w-full h-full grid grid-cols-1 grid-rows-2";
+  const cvDownLoadCss = "flex items-center text-xs text-[rgb(153,153,153)]";
+  const cvDownloadIconCss =
+    "bg-[rgb(25,25,25)] border border-[rgb(33,33,33)] p-1 cursor-pointer rounded ml-2 flex justify-center items-center";
+  const sessionOneCss = "flex justify-between p-5";
+  const profileCss =
+    "min-w-[10vw] max-w-[10vw] min-h-[10vw] max-h-[10vw] bg-[#ffbe98] border-4 border-white rounded-[10px] flex justify-center items-end overflow-hidden";
+  const infoCss = "w-[65%] flex flex-col justify-between";
+  const sessionTwoCss = "session-two flex w-full p-5";
+  const tagCss =
+    "tag w-[calc(100%-60px)] bg-[rgb(20,20,20)] border border-[rgb(25,25,25)] rounded-[10px] p-2.5 flex flex-wrap";
+  const chipStyle =
+    "flex items-center justify-center w-fit bg-[rgb(25,25,25)] border border-[rgb(33,33,33)] text-[rgb(153,153,153)] px-2.5 py-1 text-xs rounded-md";
+
   return (
-    <SContainer>
-      <div className="session-one">
-        <div className="profile">
-          <img alt="profile" src={profile} />
-        </div>
-        <div className="info">
-          <div className="first">
-            <div className="chip">
-              <div>
+    <>
+      <style>
+        {`
+        @keyframes grayscaleToColor {
+          0% {
+            filter: grayscale(100%);
+          }
+          50% {
+            filter: grayscale(100%);
+          }
+          51% {
+            filter: grayscale(0%);
+          }
+          100% {
+            filter: grayscale(0%);
+          }
+        }
+        .animate-grayscale-to-color {
+          animation: grayscaleToColor 3s ease-in-out infinite;
+        }
+      `}
+      </style>
+      <div className={containerCss}>
+        <div className={sessionOneCss}>
+          <div className={profileCss}>
+            <img
+              alt="profile"
+              src={profile}
+              className="w-full h-full animate-grayscale-to-color"
+            />
+          </div>
+          <div className={infoCss}>
+            <div className="first flex justify-between w-full">
+              <div className={chipCss}>
                 <Icon
                   icon="svg-spinners:pulse-multiple"
                   style={{ color: "#55e271" }}
                 />
+                <div className="ml-1.5">Looking for opportunities</div>
               </div>
-              <div style={{ marginLeft: "5px" }}>Looking for opportunities</div>
-            </div>
-            <div className="cv-download">
-              <div>mycv</div>
-              <div className="icon">
-                <Icon icon="line-md:download-loop" style={{ color: "white" }} />
+              <div className={cvDownLoadCss}>
+                <div>mycv</div>
+                <div className={cvDownloadIconCss}>
+                  <Icon
+                    icon="line-md:download-loop"
+                    style={{ color: "white" }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="sec">Sarun Olankranok (run)</div>
-          <div className="third">
-            <div style={{ color: "rgb(153, 153, 153)", marginRight: "5px" }}>
-              Current position
-            </div>
-            <div
-              style={{ color: "#ffbe98", fontWeight: "bold", fontSize: "20px" }}
-            >
-              Fullstack developer.
+            <div className="sec text-lg font-bold">Sarun Olankranok (run)</div>
+            <div className="third flex items-end">
+              <div className="text-[rgb(153,153,153)] mr-1.5">
+                Current position
+              </div>
+              <div className="text-[#ffbe98] font-bold text-xl">
+                Fullstack developer.
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="session-two">
-        <div className="tag">
-          <div className="chip">
-            <Icon icon="line-md:person-twotone" style={{ color: "white" }} />
-            <div style={{ marginLeft: "5px" }}>26 years old</div>
-          </div>
-          <div className="chip">
-            <div>
+        <div className={sessionTwoCss}>
+          <div className={tagCss}>
+            <div className={chipStyle}>
+              <Icon icon="line-md:person-twotone" style={{ color: "white" }} />
+              <div className="ml-1.5">26 years old</div>
+            </div>
+            <div className={chipStyle}>
               <Icon
                 icon="line-md:my-location-loop"
                 style={{ color: "white" }}
               />
+              <div className="ml-1.5">Thailand</div>
             </div>
-            <div style={{ marginLeft: "5px" }}>Thailand</div>
-          </div>
-          <div className="chip">
-            <div>
+            <div className={chipStyle}>
               <Icon icon="mingcute:world-2-fill" style={{ color: "white" }} />
+              <div className="ml-1.5">English & Thai</div>
             </div>
-            <div style={{ marginLeft: "5px" }}>English & Thai</div>
-          </div>
-          <div className="chip">
-            <div>
+            <div className={chipStyle}>
               <Icon
                 icon="line-md:briefcase-twotone"
                 style={{ color: "white" }}
               />
+              <div className="ml-1.5">Fullstack developer</div>
             </div>
-            <div style={{ marginLeft: "5px" }}>Fullstack developer</div>
-          </div>
-          <div className="chip">
-            <div>
+            <div className={chipStyle}>
               <Icon
                 icon="line-md:beer-twotone-loop"
                 style={{ color: "white" }}
               />
+              <div className="ml-1.5">Beer lover</div>
             </div>
-            <div style={{ marginLeft: "5px" }}>Beer lover</div>
-          </div>
-          <div className="chip">
-            <div>
+            <div className={chipStyle}>
               <Icon
                 icon="line-md:coffee-half-empty-twotone-loop"
                 style={{ color: "white" }}
               />
+              <div className="ml-1.5">Coffee addict</div>
             </div>
-            <div style={{ marginLeft: "5px" }}>Coffee addict</div>
-          </div>
-          <div className="chip">
-            <div>
+            <div className={chipStyle}>
               <Icon icon="mdi:university" style={{ color: "white" }} />
+              <div className="ml-1.5">MFU</div>
             </div>
-            <div style={{ marginLeft: "5px" }}>MFU</div>
           </div>
         </div>
       </div>
-    </SContainer>
+    </>
   );
 };
+
 export default Myself;
-const SContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  .chip {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(25, 25, 25);
-    border: solid 1px rgb(33, 33, 33);
-    color: rgb(153, 153, 153);
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 10px;
-  }
-  .cv-download {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: rgb(153, 153, 153);
-    & > div {
-      &.icon {
-        background-color: rgb(25, 25, 25);
-        border: solid 1px rgb(33, 33, 33);
-        padding: 5px;
-        cursor: pointer;
-        border-radius: 5px;
-        margin-left: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
-  & > div {
-    &.session-one {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px;
-      & > div {
-        &.profile {
-          width: 30%;
-          height: calc(100% - 10px);
-          background-color: #ffbe98;
-          border: 5px white solid;
-          border-radius: 10px;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
-          overflow: hidden;
-          & > img {
-            width: 100%;
-            height: 100%;
-            filter: grayscale(100%);
-          }
-        }
-        &.info {
-          width: 65%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          & > div {
-            &.first {
-              width: 100%;
-              display: flex;
-              justify-content: space-between;
-            }
-            &.sec {
-              font-size: 25px;
-              font-weight: bold;
-            }
-            &.third {
-              display: flex;
-              align-items: flex-end;
-            }
-          }
-        }
-      }
-    }
-    &.session-two {
-      display: flex;
-      width: 100%;
-      padding: 20px;
-      & > div {
-        &.tag {
-          width: calc(100% - 60px);
-          background-color: rgb(20, 20, 20);
-          border: solid 1px rgb(25, 25, 25);
-          border-radius: 10px;
-          padding: 10px;
-          display: flex;
-          flex-wrap: wrap;
-          & > div {
-            &.chip {
-              height: fit-content;
-              background-color: rgb(25, 25, 25);
-              border: solid 1px rgb(33, 33, 33);
-              color: white;
-              & > div {
-                display: flex;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;

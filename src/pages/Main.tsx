@@ -1,139 +1,37 @@
 import styled from "styled-components";
 import { media } from "../utils/media";
 import Myself from "../components/Myself";
+import YearExperience from "../components/YearExperience";
 
 const Main = () => {
+  const SContainer =
+    "w-screen h-screen flex flex-row flex-wrap p-5 justify-between overflow-scroll";
+  const SGridContainer =
+    "grow min-w-96 h-full grid grid-cols-6 grid-rows-9 gap-3 ml-2 mt-2 mr-2 mb-2 xl:mt-0 xl:mb-0";
+  const SEachGrid =
+    "bg-zinc-950 rounded-2xl border border-zinc-900 border-solid";
+
   return (
-    <SContainer>
-      <div
-        className="session-one default-grid"
-        style={{ gridArea: "session-one" }}
-      >
-        <div className="default-box" style={{ gridArea: "project" }}>
-          project
-        </div>
-        <div className="default-box" style={{ gridArea: "stack" }}>
-          stack
-        </div>
-        <div className="default-box" style={{ gridArea: "service" }}>
-          service
-        </div>
+    <div className={SContainer}>
+      <div className={`${SGridContainer} order-1`}>
+        <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>1</div>
+        <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>2</div>
+        <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>3</div>
       </div>
-      <div
-        className="session-two default-grid"
-        style={{ gridArea: "session-two" }}
-      >
-        <div className="default-box" style={{ gridArea: "year-experience" }}>
-          year-experience
-        </div>
-        <div className="default-box" style={{ gridArea: "project-count" }}>
-          project-count
-        </div>
-        <div className="default-box" style={{ gridArea: "love" }}>
-          love
-        </div>
-        <div className="default-box" style={{ gridArea: "myself" }}>
-          <Myself />
-        </div>
-        <div className="default-box" style={{ gridArea: "social-media" }}>
-          social-media
-        </div>
+      <div className={`${SGridContainer} order-2`}>
+        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>4</div>
+        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>5</div>
+        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>6</div>
+        <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>7</div>
+        <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>8</div>
       </div>
-      <div
-        className="session-three default-grid"
-        style={{ gridArea: "session-three" }}
-      >
-        <div className="default-box" style={{ gridArea: "comment" }}>
-          comment
-        </div>
-        <div className="default-box" style={{ gridArea: "focus" }}>
-          focus
-        </div>
-        <div className="default-box" style={{ gridArea: "certificate" }}>
-          certificate
-        </div>
-        <div className="default-box" style={{ gridArea: "contact" }}>
-          contact
-        </div>
+      <div className={`${SGridContainer} order-3`}>
+        <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>9</div>
+        <div className={`${SEachGrid} col-span-3 row-span-4 px-6 py-4`}>10</div>
+        <div className={`${SEachGrid} col-span-3 row-span-3 px-6 py-4`}>11</div>
+        <div className={`${SEachGrid} col-span-3 row-span-1 px-6 py-4`}>12</div>
       </div>
-    </SContainer>
+    </div>
   );
 };
 export default Main;
-const SContainer = styled.div`
-  .default-grid {
-    display: grid;
-    grid-gap: 10px;
-  }
-  .default-box {
-    background-color: #0f0f0f;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #191919;
-  }
-  width: 93%;
-  height: 93%;
-  display: grid;
-  overflow: scroll;
-  grid-gap: 10px;
-  grid-template-columns: 1fr 2fr 2fr;
-  grid-template-rows: repeat(1, 100%);
-  grid-template-areas: "session-one session-two session-three";
-
-  ${media.tablet`
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 100%);
-    grid-template-areas: 
-    "session-one session-two"
-    "session-three session-three";
-  `}
-
-  ${media.phone`
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 100%);
-    grid-template-areas: 
-    "session-two"
-    "session-one"
-    "session-three";
-  `}
-  & > div {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    &.session-one {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(6, 1fr);
-      grid-template-areas:
-        "project project"
-        "project project"
-        "stack stack"
-        "stack stack"
-        "service service"
-        "service service";
-    }
-    &.session-two {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(6, 1fr);
-      grid-template-areas:
-        "year-experience project-count love"
-        "myself myself myself"
-        "myself myself myself"
-        "myself myself myself"
-        "social-media social-media social-media"
-        "social-media social-media social-media";
-    }
-    &.session-three {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(6, 1fr);
-      grid-template-areas:
-        "comment comment focus"
-        "comment comment focus"
-        "comment comment focus"
-        "certificate contact contact"
-        "certificate contact contact"
-        "certificate contact contact";
-    }
-  }
-`;
