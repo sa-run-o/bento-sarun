@@ -1,132 +1,80 @@
 import React from "react";
+import profileImage from "../assets/profile.png";
 import { Icon } from "@iconify/react";
-import profile from "../assets/profile.png";
-
 const Myself = () => {
-  const chipCss =
-    "flex items-center justify-center w-fit bg-[rgb(25,25,25)] border border-[rgb(33,33,33)] text-[rgb(153,153,153)] px-2.5 py-1 text-xs rounded-md";
-  const containerCss = "w-full h-full grid grid-cols-1 grid-rows-2";
-  const cvDownLoadCss = "flex items-center text-xs text-[rgb(153,153,153)]";
-  const cvDownloadIconCss =
-    "bg-[rgb(25,25,25)] border border-[rgb(33,33,33)] p-1 cursor-pointer rounded ml-2 flex justify-center items-center";
-  const sessionOneCss = "flex justify-between p-5";
-  const profileCss =
-    "min-w-[10vw] max-w-[10vw] min-h-[10vw] max-h-[10vw] bg-[#ffbe98] border-4 border-white rounded-[10px] flex justify-center items-end overflow-hidden";
-  const infoCss = "w-[65%] flex flex-col justify-between";
-  const sessionTwoCss = "session-two flex w-full p-5";
-  const tagCss =
-    "tag w-[calc(100%-60px)] bg-[rgb(20,20,20)] border border-[rgb(25,25,25)] rounded-[10px] p-2.5 flex flex-wrap";
-  const chipStyle =
-    "flex items-center justify-center w-fit bg-[rgb(25,25,25)] border border-[rgb(33,33,33)] text-[rgb(153,153,153)] px-2.5 py-1 text-xs rounded-md";
-
+  const tags = [
+    { icon: "line-md:map-marker-alt-twotone", label: "Thailand" },
+    { icon: "line-md:chat", label: "English & Thai" },
+    { icon: "line-md:briefcase-twotone", label: "Fullstack developer" },
+    { icon: "line-md:person-twotone", label: "26 years old" },
+    { icon: "ic:twotone-school", label: "MFU" },
+    { icon: "line-md:coffee-twotone-loop", label: "Coffee & Beer lover" },
+  ];
   return (
-    <>
-      <style>
-        {`
-        @keyframes grayscaleToColor {
-          0% {
-            filter: grayscale(100%);
-          }
-          50% {
-            filter: grayscale(100%);
-          }
-          51% {
-            filter: grayscale(0%);
-          }
-          100% {
-            filter: grayscale(0%);
-          }
-        }
-        .animate-grayscale-to-color {
-          animation: grayscaleToColor 3s ease-in-out infinite;
-        }
-      `}
-      </style>
-      <div className={containerCss}>
-        <div className={sessionOneCss}>
-          <div className={profileCss}>
-            <img
-              alt="profile"
-              src={profile}
-              className="w-full h-full animate-grayscale-to-color"
-            />
-          </div>
-          <div className={infoCss}>
-            <div className="first flex justify-between w-full">
-              <div className={chipCss}>
-                <Icon
-                  icon="svg-spinners:pulse-multiple"
-                  style={{ color: "#55e271" }}
-                />
-                <div className="ml-1.5">Looking for opportunities</div>
-              </div>
-              <div className={cvDownLoadCss}>
-                <div>mycv</div>
-                <div className={cvDownloadIconCss}>
-                  <Icon
-                    icon="line-md:download-loop"
-                    style={{ color: "white" }}
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="sec text-lg font-bold">Sarun Olankranok (run)</div>
-            <div className="third flex items-end">
-              <div className="text-[rgb(153,153,153)] mr-1.5">
-                Current position
-              </div>
-              <div className="text-[#ffbe98] font-bold text-xl">
-                Fullstack developer.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={sessionTwoCss}>
-          <div className={tagCss}>
-            <div className={chipStyle}>
-              <Icon icon="line-md:person-twotone" style={{ color: "white" }} />
-              <div className="ml-1.5">26 years old</div>
-            </div>
-            <div className={chipStyle}>
-              <Icon
-                icon="line-md:my-location-loop"
-                style={{ color: "white" }}
-              />
-              <div className="ml-1.5">Thailand</div>
-            </div>
-            <div className={chipStyle}>
-              <Icon icon="mingcute:world-2-fill" style={{ color: "white" }} />
-              <div className="ml-1.5">English & Thai</div>
-            </div>
-            <div className={chipStyle}>
-              <Icon
-                icon="line-md:briefcase-twotone"
-                style={{ color: "white" }}
-              />
-              <div className="ml-1.5">Fullstack developer</div>
-            </div>
-            <div className={chipStyle}>
-              <Icon
-                icon="line-md:beer-twotone-loop"
-                style={{ color: "white" }}
-              />
-              <div className="ml-1.5">Beer lover</div>
-            </div>
-            <div className={chipStyle}>
-              <Icon
-                icon="line-md:coffee-half-empty-twotone-loop"
-                style={{ color: "white" }}
-              />
-              <div className="ml-1.5">Coffee addict</div>
-            </div>
-            <div className={chipStyle}>
-              <Icon icon="mdi:university" style={{ color: "white" }} />
-              <div className="ml-1.5">MFU</div>
-            </div>
-          </div>
+    <div className="w-full h-full grid grid-cols-3 grid-rows-4 gap-5 ">
+      <div className="col-span-1 row-span-2">
+        <div className="w-full h-full bg-emerald-500 flex items-end justify-center rounded-lg overflow-hidden border-4 border-white">
+          <img
+            alt="display"
+            src={profileImage}
+            className="w-full h-auto grayscale"
+          />
         </div>
       </div>
-    </>
+      <div className="col-span-2 row-span-2 flex flex-col justify-between">
+        <div className="flex justify-between text-base">
+          <div className="flex rounded-xl border border-zinc-900 border-solid bg-zinc-900 px-3.5 py-0.5 items-center">
+            <div className="mr-2">
+              <Icon
+                icon="svg-spinners:pulse-multiple"
+                style={{ color: "#10b981" }}
+              />
+            </div>
+            <div className="text-zinc-700">Available To Work</div>
+          </div>
+          <div className="flex items-center">
+            <div className="text-zinc-700 mr-2">mycv</div>
+            <div className="p-1.5 border-zinc-900 border-solid bg-zinc-900 rounded-lg cursor-pointer">
+              <Icon
+                icon="line-md:download-outline-loop"
+                style={{ color: "#10b981" }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="text-4xl font-bold">Sarun Olankranok</div>
+        <div className="text-base text-zinc-700">
+          Current position: Fullstack developer
+        </div>
+      </div>
+      <div className="col-span-3 ">
+        <div className="w-full h-full rounded-xl border border-zinc-900 border-solid bg-zinc-900 px-3.5 flex flex-wrap items-center">
+          {tags.map((tag, i) => {
+            return (
+              <div
+                key={i}
+                className="flex items-center rounded-xl border border-zinc-900 border-solid bg-zinc-800 h-fit w-fit mr-1 mb-1 px-2 text-sm"
+              >
+                <div className="mr-1">
+                  <Icon icon={tag.icon} style={{ color: "#10b981" }} />
+                </div>
+                <div>{tag.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="col-span-3 ">
+        <div className="w-full h-full italic text-zinc-500 text-center text-xs">
+          <pre>{`
+Hello! You can call me Run.
+I'm a full-stack developer.
+I specialize in React, TypeScript, and Node.js.
+I'm also keenly interested in UI/UX design.
+          `}</pre>
+        </div>
+      </div>
+    </div>
   );
 };
 
