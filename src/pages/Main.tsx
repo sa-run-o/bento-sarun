@@ -1,5 +1,9 @@
+import { useState } from "react";
+import DeveloperTools from "../components/DeveloperTools";
 import Myself from "../components/Myself";
 import YearExperience from "../components/YearExperience";
+import ProjectCount from "../components/ProjectCount";
+import LikeMe from "../components/LikeMe";
 
 const Main = () => {
   const SContainer =
@@ -20,9 +24,15 @@ const Main = () => {
       <div
         className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1`}
       >
-        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>4</div>
-        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>5</div>
-        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>6</div>
+        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>
+          <YearExperience />
+        </div>
+        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>
+          <ProjectCount />
+        </div>
+        <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>
+          <LikeMe />
+        </div>
         <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>
           <Myself />
         </div>
@@ -34,7 +44,9 @@ const Main = () => {
         <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>9</div>
         <div className={`${SEachGrid} col-span-3 row-span-4 px-6 py-4`}>10</div>
         <div className={`${SEachGrid} col-span-3 row-span-3 px-6 py-4`}>11</div>
-        <div className={`${SEachGrid} col-span-3 row-span-1 px-6 py-4`}>12</div>
+        <div className={`${SEachGrid} col-span-3 row-span-1 px-6 py-4`}>
+          <DeveloperTools />
+        </div>
       </div>
     </div>
   );
