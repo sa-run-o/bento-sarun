@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import DeveloperTools from "../components/DeveloperTools";
 import Myself from "../components/Myself";
 import YearExperience from "../components/YearExperience";
 import ProjectCount from "../components/ProjectCount";
 import LikeMe from "../components/LikeMe";
+import { getEngagement } from "../apis/information";
 
 const Main = () => {
+  useEffect(() => {
+    getEngagement();
+  }, []);
   const SContainer =
     "w-full h-full grid sm:grid-cols-1 sm:grid-rows3 lg:grid-cols-2 lg:grid-rows2 xl:grid-cols-3 xl:grid-rows-1 gap-4 p-5 overflow-scroll";
   const SGridContainer = "grid grid-cols-6 grid-rows-9 gap-3";
