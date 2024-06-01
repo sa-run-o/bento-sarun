@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import DeveloperTools from "../components/DeveloperTools";
 import Myself from "../components/Myself";
 import YearExperience from "../components/YearExperience";
 import ProjectCount from "../components/ProjectCount";
 import LikeMe from "../components/LikeMe";
 import { getEngagement } from "../apis/information";
+import VisitCount from "../components/VisitCount";
 
 const Main = () => {
   useEffect(() => {
@@ -49,7 +49,7 @@ const Main = () => {
         <div className={`${SEachGrid} col-span-3 row-span-4 px-6 py-4`}>10</div>
         <div className={`${SEachGrid} col-span-3 row-span-3 px-6 py-4`}>11</div>
         <div className={`${SEachGrid} col-span-3 row-span-1 px-6 py-4`}>
-          <DeveloperTools />
+          <VisitCount />
         </div>
       </div>
     </div>
