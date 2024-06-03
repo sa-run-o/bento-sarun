@@ -5,6 +5,9 @@ import ProjectCount from "../components/ProjectCount";
 import LikeMe from "../components/LikeMe";
 import { getEngagement } from "../apis/information";
 import VisitCount from "../components/VisitCount";
+import DeveloperTools from "../components/DeveloperTools";
+import ContactMe from "../components/ContactMe";
+import CommentMe from "../components/CommentMe";
 
 const Main = () => {
   useEffect(() => {
@@ -45,9 +48,15 @@ const Main = () => {
       <div
         className={`${SGridContainer} sm:col-span-1 lg:col-span-2 xl:col-span-1`}
       >
-        <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>9</div>
-        <div className={`${SEachGrid} col-span-3 row-span-4 px-6 py-4`}>10</div>
-        <div className={`${SEachGrid} col-span-3 row-span-3 px-6 py-4`}>11</div>
+        <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>
+          <CommentMe />
+        </div>
+        <div className={`${SEachGrid} col-span-3 row-span-4 px-6 py-4`}>
+          <DeveloperTools />
+        </div>
+        <div className={`${SEachGrid} col-span-3 row-span-3 px-6 py-4`}>
+          <ContactMe />
+        </div>
         <div className={`${SEachGrid} col-span-3 row-span-1 px-6 py-4`}>
           <VisitCount />
         </div>
