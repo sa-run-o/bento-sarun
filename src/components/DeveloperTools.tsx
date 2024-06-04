@@ -8,6 +8,7 @@ const DeveloperTools = () => {
     { icon: "line-md:github-loop", label: "gh-page" },
     { icon: "logos:nodejs", label: "Nodejs" },
     { icon: "logos:firebase", label: "Firebase" },
+    { icon: "skill-icons:figma-dark", label: "Figma" },
   ];
   return (
     <div className="w-full h-full relative overflow-scroll">
@@ -18,9 +19,12 @@ const DeveloperTools = () => {
         />
         <div>Developer Tools</div>
       </div>
-      {toolList.map((tool) => {
+      {toolList.map((tool, index) => {
         return (
-          <div className="flex  items-center rounded-2xl border border-zinc-900 border-solid mt-4 py-2 px-4">
+          <div
+            key={index}
+            className="flex  items-center rounded-2xl border border-zinc-900 border-solid mt-4 py-2 px-4"
+          >
             <div className="w-10">
               <Icon icon={tool.icon} />
             </div>

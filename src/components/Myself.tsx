@@ -49,10 +49,10 @@ const Myself = () => {
       </div>
       <div className="col-span-3 ">
         <div className="w-full h-full rounded-xl border border-zinc-900 border-solid bg-zinc-900 px-3.5 flex flex-wrap items-center">
-          {tags.map((tag, i) => {
+          {tags.map((tag, index) => {
             return (
               <div
-                key={i}
+                key={index}
                 className="flex items-center rounded-xl border border-zinc-900 border-solid bg-zinc-800 h-fit w-fit mr-1 mb-1 px-2 text-sm"
               >
                 <div className="mr-1">
