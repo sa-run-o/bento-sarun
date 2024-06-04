@@ -24,7 +24,7 @@ const CommentMe = () => {
               style={{ color: "#10b981", marginRight: "10px" }}
             />
           </div>
-          <div>Say Hello to me</div>
+          <div>Say Hello to me.</div>
         </div>
       </div>
       <div className="h-3/5 overflow-y-scroll">
