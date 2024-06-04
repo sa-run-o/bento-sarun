@@ -2,7 +2,7 @@ import { create } from "zustand";
 interface IComment {
   by: string;
   data: string;
-  timestamp: { nanoseconds: number; seconds: number };
+  timestamp: string;
 }
 interface IInformationStore {
   view: number;
@@ -11,6 +11,7 @@ interface IInformationStore {
   setLike: (data: number) => void;
   comments: IComment[];
   setComments: (data: IComment[]) => void;
+  addComment: (data: IComment) => void;
 }
 const informationStore = create<IInformationStore>((set) => ({
   view: 0,
@@ -19,5 +20,7 @@ const informationStore = create<IInformationStore>((set) => ({
   setLike: (data) => set(() => ({ like: data })),
   comments: [],
   setComments: (data) => set(() => ({ comments: data })),
+  addComment: (data) =>
+    set((state) => ({ comments: [...state.comments, data] })),
 }));
 export default informationStore;

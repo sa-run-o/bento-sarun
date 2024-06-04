@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import informationStore from "../store/informationStore";
 import { formatNanosecondsToDate } from "../utils/format";
 import { useState } from "react";
+import { uploadComment } from "../apis/comment";
 
 const CommentMe = () => {
   const { comments } = informationStore();
@@ -11,6 +12,7 @@ const CommentMe = () => {
     if (!message) return;
     const by = nameMessage || "Anonymous";
     const datetime = Math.floor(Date.now() / 1000);
+    uploadComment({ by, message, datetime: formatNanosecondsToDate(datetime) });
     setNameMessage("");
     setMessage("");
   };
@@ -37,9 +39,7 @@ const CommentMe = () => {
               <div>{comment.data}</div>
               <div className="flex justify-end items-center mt-3 italic">
                 <div className="text-xs text-zinc-500">{comment.by}@</div>
-                <div className="text-xs text-zinc-500">
-                  {formatNanosecondsToDate(comment.timestamp.seconds)}
-                </div>
+                <div className="text-xs text-zinc-500">{comment.timestamp}</div>
               </div>
             </div>
           );
@@ -69,8 +69,13 @@ const CommentMe = () => {
             handleSendMessage();
           }}
         >
-          <div className="w-full h-full text-center rounded-md bg-zinc-900 text-xs cursor-pointer ml-1 py-3">
-            send
+          <div className="w-full h-full flex justify-center items-center rounded-md bg-zinc-900 text-xs cursor-pointer ml-1 py-3">
+            <Icon
+              icon="iconamoon:send-duotone"
+              style={{ color: "#10b981" }}
+              width="1.5em"
+              height="1.5em"
+            />
           </div>
         </div>
       </div>
