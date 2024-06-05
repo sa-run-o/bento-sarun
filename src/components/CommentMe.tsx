@@ -3,6 +3,7 @@ import informationStore from "../store/informationStore";
 import { formatNanosecondsToDate } from "../utils/format";
 import { useState } from "react";
 import { uploadComment } from "../apis/comment";
+import { filterBadWords } from "../utils/filter";
 
 const CommentMe = () => {
   const { comments } = informationStore();
@@ -12,7 +13,11 @@ const CommentMe = () => {
     if (!message) return;
     const by = nameMessage || "Anonymous";
     const datetime = Math.floor(Date.now() / 1000);
-    uploadComment({ by, message, datetime: formatNanosecondsToDate(datetime) });
+    uploadComment({
+      by: filterBadWords(by),
+      message: filterBadWords(message),
+      datetime: formatNanosecondsToDate(datetime),
+    });
     setNameMessage("");
     setMessage("");
   };
