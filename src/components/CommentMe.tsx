@@ -4,13 +4,16 @@ import { formatNanosecondsToDate } from "../utils/format";
 import { useState } from "react";
 import { uploadComment } from "../apis/comment";
 import { filterBadWords } from "../utils/filter";
+import notificationStore from "../store/notificationStore";
 
 const CommentMe = () => {
   const { comments } = informationStore();
   const [nameMessage, setNameMessage] = useState("");
+  const { setIsNotificationOn } = notificationStore();
   const [message, setMessage] = useState("");
   const handleSendMessage = () => {
     if (!message) return;
+    setIsNotificationOn("Thanks for your comment!");
     const by = nameMessage || "Anonymous";
     const datetime = Math.floor(Date.now() / 1000);
     uploadComment({

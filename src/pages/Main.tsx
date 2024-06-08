@@ -15,9 +15,11 @@ import { increaseView } from "../apis/visit";
 import HelloModal from "../components/modals/HelloModal";
 import LoadingStore from "../store/loadingStore";
 import MainLoading from "../components/MainLoading";
+import notificationStore from "../store/notificationStore";
 
 const Main = () => {
   const { modalComponent, setModalComponent } = modalStore();
+  const { isNotification } = notificationStore();
   const { isMainLoading } = LoadingStore();
   const handleBaseInformation = useCallback(async () => {
     const isTrue = localStorage.getItem("visited");
@@ -43,7 +45,7 @@ const Main = () => {
   ) : (
     <div className={SContainer}>
       {modalComponent && <Modal>{modalComponent}</Modal>}
-      <Notification />
+      {isNotification && <Notification />}
       <div
         className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1`}
       >
