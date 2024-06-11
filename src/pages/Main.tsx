@@ -16,6 +16,7 @@ import HelloModal from "../components/modals/HelloModal";
 import LoadingStore from "../store/loadingStore";
 import MainLoading from "../components/MainLoading";
 import notificationStore from "../store/notificationStore";
+import MySocialMedia from "../components/MySocialMedia";
 
 const Main = () => {
   const { modalComponent, setModalComponent } = modalStore();
@@ -68,7 +69,9 @@ const Main = () => {
         <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>
           <Myself />
         </div>
-        <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>8</div>
+        <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>
+          <MySocialMedia />
+        </div>
       </div>
       <div
         className={`${SGridContainer} sm:col-span-1 lg:col-span-2 xl:col-span-1`}

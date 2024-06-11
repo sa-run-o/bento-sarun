@@ -48,12 +48,12 @@ const Myself = () => {
         </div>
       </div>
       <div className="col-span-3 ">
-        <div className="w-full h-full rounded-xl border border-zinc-900 border-solid bg-zinc-900 px-3.5 flex flex-wrap items-center">
+        <div className="w-full h-full rounded-xl border border-zinc-900 border-solid bg-zinc-900 px-3.5 py-1.5 flex flex-wrap ">
           {tags.map((tag, index) => {
             return (
               <div
                 key={index}
-                className="flex items-center rounded-xl border border-zinc-900 border-solid bg-zinc-800 h-fit w-fit mr-1 mb-1 px-2 text-sm"
+                className="flex items-center rounded-xl border border-zinc-900 border-solid bg-zinc-800 h-fit w-fit mr-1 p-2 text-xs"
               >
                 <div className="mr-1">
                   <Icon icon={tag.icon} style={{ color: "#10b981" }} />
