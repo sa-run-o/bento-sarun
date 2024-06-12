@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/bento-sarun/static/css/main.3edb4f73.css",
-    "main.js": "/bento-sarun/static/js/main.99917997.js",
+    "main.css": "/bento-sarun/static/css/main.d74c3a81.css",
+    "main.js": "/bento-sarun/static/js/main.bb83ae85.js",
     "static/js/453.531224f6.chunk.js": "/bento-sarun/static/js/453.531224f6.chunk.js",
     "static/media/profile.png": "/bento-sarun/static/media/profile.898aaa845b27a9baf20b.png",
     "index.html": "/bento-sarun/index.html",
-    "main.3edb4f73.css.map": "/bento-sarun/static/css/main.3edb4f73.css.map",
-    "main.99917997.js.map": "/bento-sarun/static/js/main.99917997.js.map",
+    "main.d74c3a81.css.map": "/bento-sarun/static/css/main.d74c3a81.css.map",
+    "main.bb83ae85.js.map": "/bento-sarun/static/js/main.bb83ae85.js.map",
     "453.531224f6.chunk.js.map": "/bento-sarun/static/js/453.531224f6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3edb4f73.css",
-    "static/js/main.99917997.js"
+    "static/css/main.d74c3a81.css",
+    "static/js/main.bb83ae85.js"
   ]
 }
