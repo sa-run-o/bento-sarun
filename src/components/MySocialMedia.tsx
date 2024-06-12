@@ -69,11 +69,11 @@ const MySocialMedia = () => {
       <div className="flex justify-center items-center">
         <div>
           <Icon
-            icon="basil:lightning-outline"
+            icon="iconamoon:lightning-2-fill"
             style={{ color: "#10b981", marginRight: "10px" }}
           />
         </div>
-        <div className="font-bold text-xl">My Social Media</div>
+        <div className="font-bold text-base">My Social Media</div>
       </div>
       <TagsList isReverse={false} />
       <TagsList isReverse={true} />
