@@ -6,7 +6,7 @@ const path = "information";
 
 export const getEngagement = async () => {
   loadingStore.getState().setIsMainLoading(true);
-  const result = await instance.get(`/${path}/engagement`);
+  const result = await instance.get(`/${path}/information`);
   informationStore.getState().setLike(result.data.like);
   informationStore.getState().setView(result.data.view);
   informationStore.getState().setComments(result.data.comments);
