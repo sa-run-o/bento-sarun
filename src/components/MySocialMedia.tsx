@@ -37,9 +37,10 @@ const TagsList = ({ isReverse }: ITagList) => {
           : "flex-row animate-slideRightToLeft"
       } hover:animation-pause mt-2`}
     >
-      {socialMediaList.map((socialMedia) => {
+      {socialMediaList.map((socialMedia, index) => {
         return (
           <div
+            key={index}
             className={`flex cursor-pointer ${
               isReverse ? "ml-2" : "mr-2"
             } text-xl font-bold rounded-2xl border border-zinc-900 border-solid px-5 py-2 items-center justify-center text-zinc-400 `}

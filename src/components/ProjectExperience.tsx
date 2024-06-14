@@ -1,18 +1,9 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-const projectList = [
-  {
-    name: "1",
-    image: "1",
-    desc: "1",
-  },
-  { name: "2", image: "2", desc: "2" },
-  { name: "3", image: "3", desc: "3" },
-  { name: "4", image: "4", desc: "4" },
-  { name: "5", image: "5", desc: "5" },
-  { name: "6", image: "6", desc: "6" },
-];
+import informationStore from "../store/informationStore";
+
 const ProjectExperience = () => {
+  const { projectList } = informationStore();
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const handleDecreaseIndex = () => {
     const result = activeIndex === 0 ? projectList.length - 1 : activeIndex - 1;
@@ -47,7 +38,13 @@ const ProjectExperience = () => {
           <div className="absolute top-1 left-1 text-xs bg-zinc-900 px-3 py-1 rounded-xl ">{`${
             activeIndex + 1
           } / ${projectList.length}`}</div>
-          <div>{projectList[activeIndex].image}</div>
+          <div className="h-full py-3">
+            <img
+              className="h-full"
+              alt={projectList[activeIndex].name}
+              src={projectList[activeIndex].image}
+            />
+          </div>
         </div>
         <div
           className="w-1/12 h-full flex items-center justify-center cursor-pointer hover:bg-zinc-900"
@@ -60,11 +57,12 @@ const ProjectExperience = () => {
         </div>
       </div>
       <div className="h-[30%] border-solid border-t-zinc-800 border-t-2">
-        <div className="mt-1 font-bold text-lg underline h-1/6">
+        <div className="my-1 font-bold text-lg underline h-1/6">
           {projectList[activeIndex].name}
         </div>
         <div className="text-pretty  overflow-y-scroll h-5/6">
-          {projectList[activeIndex].desc}
+          <div>{projectList[activeIndex].description}</div>
+          <div className="mt-1 font-bold text-lg underline">Responsibility</div>
         </div>
       </div>
     </div>

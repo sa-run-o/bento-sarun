@@ -10,5 +10,8 @@ export const getEngagement = async () => {
   informationStore.getState().setLike(result.data.like);
   informationStore.getState().setView(result.data.view);
   informationStore.getState().setComments(result.data.comments);
+  informationStore.getState().setPersonalInformation(result.data.personal);
+  informationStore.getState().setProjectList(result.data.project);
+  informationStore.getState().setStackList(result.data.stack);
   loadingStore.getState().setIsMainLoading(false);
 };

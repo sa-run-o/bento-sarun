@@ -1,32 +1,8 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
-const stackList = [
-  {
-    name: "React Ts",
-    icon: "vscode-icons:file-type-reactts",
-    link: "https://react.dev/learn/typescript",
-    color: "",
-  },
-  {
-    name: "Node.js",
-    icon: "teenyicons:nodejs-solid",
-    link: "https://nodejs.org/en",
-    color: "#407E37",
-  },
-  {
-    name: "Express.js",
-    icon: "solar:expressionless-square-bold",
-    link: "https://expressjs.com/",
-    color: "white",
-  },
-  {
-    name: "JavaScript",
-    icon: "ri:javascript-fill",
-    link: "https://www.javascript.com/",
-    color: "#F7E029",
-  },
-];
+import informationStore from "../store/informationStore";
 const MyStack = () => {
+  const { stackList } = informationStore();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   return (
     <div className="w-full h-full">
@@ -43,6 +19,7 @@ const MyStack = () => {
         {stackList.map((e, index) => {
           return (
             <div
+              key={index}
               className="w-[48%] rounded-2xl border border-zinc-900 border-solid py-3 px-5 mt-5 mr-1 text-xl flex items-center justify-between group"
               onClick={() => {
                 window.open(e.link, "_blank");
