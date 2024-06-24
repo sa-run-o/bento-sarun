@@ -2,25 +2,25 @@ import { Icon } from "@iconify/react";
 const socialMediaList = [
   {
     name: "facebook",
-    value: "typcn:social-facebook-circular",
+    value: "https://www.facebook.com/Runwayzlenon/",
     font: "font-facebook",
     backgroundHover: "#1877F2",
   },
   {
     name: "INSTAGRAM",
-    value: "",
+    value: "https://www.instagram.com/a.runnnnn",
     font: "font-instagram",
     backgroundHover: "linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045)",
   },
   {
     name: "Linkedin",
-    value: "typcn:social-linkedin-circular",
+    value: "https://www.linkedin.com/in/sarun-orankranok-8b777421a/",
     font: "font-linkedin",
     backgroundHover: "#0A66C2",
   },
   {
     name: "GitHub",
-    value: "",
+    value: "https://github.com/sa-run-o",
     font: "font-github",
     backgroundHover: "#3A72B8",
   },
@@ -54,7 +54,7 @@ const TagsList = ({ isReverse }: ITagList) => {
               e.currentTarget.style.color = "#94A3B8";
             }}
             onClick={() => {
-              console.log(socialMedia.value);
+              window.open(socialMedia.value, "_blank");
             }}
           >
             <div className={`${socialMedia.font}`}>{socialMedia.name}</div>

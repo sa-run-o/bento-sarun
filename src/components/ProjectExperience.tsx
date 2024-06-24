@@ -35,16 +35,17 @@ const ProjectExperience = () => {
           />
         </div>
         <div className="w-10/12 h-full relative flex justify-center items-center">
-          <div className="absolute top-1 left-1 text-xs bg-zinc-900 px-3 py-1 rounded-xl ">{`${
+          <div className="absolute top-1 left-1 text-xs bg-zinc-900 px-3 py-1 rounded-xl opacity-70">{`${
             activeIndex + 1
           } / ${projectList.length}`}</div>
-          <div className="h-full py-3">
-            <img
-              className="h-full"
-              alt={projectList[activeIndex].name}
-              src={projectList[activeIndex].image}
-            />
-          </div>
+          {projectList[activeIndex].image &&
+            projectList[activeIndex].image.map((e, index) => {
+              return (
+                <div className="h-5/6 py-3" key={index}>
+                  <img className="h-full" alt={`project-${index}`} src={e} />
+                </div>
+              );
+            })}
         </div>
         <div
           className="w-1/12 h-full flex items-center justify-center cursor-pointer hover:bg-zinc-900"
@@ -63,6 +64,10 @@ const ProjectExperience = () => {
         <div className="text-pretty  overflow-y-scroll h-5/6">
           <div>{projectList[activeIndex].description}</div>
           <div className="mt-1 font-bold text-lg underline">Responsibility</div>
+          {projectList[activeIndex]?.responsibility?.length &&
+            projectList[activeIndex].responsibility.map((e, index) => {
+              return <div key={index}>{e}</div>;
+            })}
         </div>
       </div>
     </div>

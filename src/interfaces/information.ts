@@ -7,7 +7,7 @@ export interface IComment {
 }
 export interface IProject {
   name: string;
-  image: string;
+  image: string[];
   description: string;
   responsibility: string[];
 }
