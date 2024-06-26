@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/bento-sarun/static/css/main.a542be46.css",
-    "main.js": "/bento-sarun/static/js/main.35a31d26.js",
+    "main.js": "/bento-sarun/static/js/main.aa7b9297.js",
     "static/js/453.531224f6.chunk.js": "/bento-sarun/static/js/453.531224f6.chunk.js",
-    "static/media/profile.png": "/bento-sarun/static/media/profile.898aaa845b27a9baf20b.png",
+    "static/media/profile.png": "/bento-sarun/static/media/profile.7d99911ca019d36104e4.png",
     "index.html": "/bento-sarun/index.html",
     "main.a542be46.css.map": "/bento-sarun/static/css/main.a542be46.css.map",
-    "main.35a31d26.js.map": "/bento-sarun/static/js/main.35a31d26.js.map",
+    "main.aa7b9297.js.map": "/bento-sarun/static/js/main.aa7b9297.js.map",
     "453.531224f6.chunk.js.map": "/bento-sarun/static/js/453.531224f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a542be46.css",
-    "static/js/main.35a31d26.js"
+    "static/js/main.aa7b9297.js"
   ]
 }
