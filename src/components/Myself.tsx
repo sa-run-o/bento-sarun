@@ -1,7 +1,9 @@
 import React from "react";
 import profileImage from "../assets/profile.png";
 import { Icon } from "@iconify/react";
+import informationStore from "../store/informationStore";
 const Myself = () => {
+  const { personalInformation } = informationStore();
   const tags = [
     { icon: "line-md:map-marker-alt-twotone", label: "Thailand" },
     { icon: "line-md:chat", label: "English & Thai" },
@@ -34,7 +36,12 @@ const Myself = () => {
           </div>
           <div className="flex items-center">
             <div className="text-zinc-700 mr-2">mycv</div>
-            <div className="p-1.5 border-zinc-900 border-solid bg-zinc-900 rounded-lg cursor-pointer">
+            <div
+              className="p-1.5 border-zinc-900 border-solid bg-zinc-900 rounded-lg cursor-pointer"
+              onClick={() => {
+                window.open(personalInformation?.cvLink);
+              }}
+            >
               <Icon
                 icon="line-md:download-outline-loop"
                 style={{ color: "#10b981" }}
