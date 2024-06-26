@@ -50,7 +50,7 @@ const Main = () => {
       {modalComponent && <Modal>{modalComponent}</Modal>}
       {isNotification && <Notification />}
       <div
-        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1`}
+        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1 sm:order-3 lg:order-2 xl:order-1`}
       >
         <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>
           <MyStack />
@@ -60,7 +60,7 @@ const Main = () => {
         </div>
       </div>
       <div
-        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1`}
+        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1 sm:order-1 lg:order-1 xl:order-2`}
       >
         <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>
           <YearExperience />
@@ -79,7 +79,7 @@ const Main = () => {
         </div>
       </div>
       <div
-        className={`${SGridContainer} sm:col-span-1 lg:col-span-2 xl:col-span-1`}
+        className={`${SGridContainer} sm:col-span-1 lg:col-span-2 xl:col-span-1 sm:order-2 lg:order-3 xl:order-3`}
       >
         <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>
           <CommentMe />
