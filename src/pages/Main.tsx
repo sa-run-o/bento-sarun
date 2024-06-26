@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Myself from "../components/Myself";
 import YearExperience from "../components/YearExperience";
 import ProjectCount from "../components/ProjectCount";
@@ -23,21 +23,24 @@ import ProjectExperience from "../components/ProjectExperience";
 const Main = () => {
   const { modalComponent, setModalComponent } = modalStore();
   const { isNotification } = notificationStore();
+  const callRef = useRef(false);
   const { isMainLoading } = LoadingStore();
-  const handleBaseInformation = useCallback(async () => {
+  const handleBaseInformation = async () => {
     const isTrue = localStorage.getItem("visited");
-    if (isTrue !== "true") {
+    if (isTrue !== "true" && callRef.current !== true) {
+      callRef.current = true;
       const viewIncreased = await increaseView();
       const modalContent = <HelloModal luckyNumber={viewIncreased} />;
       setModalComponent(modalContent);
     }
     localStorage.setItem("visited", "true");
     getEngagement();
-  }, [setModalComponent]);
+  };
 
   useEffect(() => {
     handleBaseInformation();
-  }, [handleBaseInformation]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const SContainer =
     "w-full h-full grid sm:grid-cols-1 sm:grid-rows3 lg:grid-cols-2 lg:grid-rows2 xl:grid-cols-3 xl:grid-rows-1 gap-4 p-5 overflow-scroll relative";
   const SGridContainer = "grid grid-cols-6 grid-rows-9 gap-3";
@@ -50,7 +53,7 @@ const Main = () => {
       {modalComponent && <Modal>{modalComponent}</Modal>}
       {isNotification && <Notification />}
       <div
-        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1 sm:order-3 lg:order-2 xl:order-1`}
+        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1 order-3 sm:order-3 lg:order-2 xl:order-1`}
       >
         <div className={`${SEachGrid} col-span-6 row-span-3 px-6 py-4`}>
           <MyStack />
@@ -60,7 +63,7 @@ const Main = () => {
         </div>
       </div>
       <div
-        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1 sm:order-1 lg:order-1 xl:order-2`}
+        className={`${SGridContainer} sm:col-span-1 lg:col-span-1 xl:col-span-1 order-1 sm:order-1 lg:order-1 xl:order-2`}
       >
         <div className={`${SEachGrid} col-span-2 row-span-2 px-6 py-4`}>
           <YearExperience />
@@ -79,7 +82,7 @@ const Main = () => {
         </div>
       </div>
       <div
-        className={`${SGridContainer} sm:col-span-1 lg:col-span-2 xl:col-span-1 sm:order-2 lg:order-3 xl:order-3`}
+        className={`${SGridContainer} sm:col-span-1 lg:col-span-2 xl:col-span-1 order-2 sm:order-2 lg:order-3 xl:order-3`}
       >
         <div className={`${SEachGrid} col-span-6 row-span-5 px-6 py-4`}>
           <CommentMe />

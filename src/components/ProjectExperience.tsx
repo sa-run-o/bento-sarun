@@ -38,7 +38,7 @@ const ProjectExperience = () => {
           <div className="absolute top-1 left-1 text-xs bg-zinc-900 px-3 py-1 rounded-xl opacity-70">{`${
             activeIndex + 1
           } / ${projectList.length}`}</div>
-          {projectList[activeIndex].image &&
+          {projectList?.[activeIndex]?.image &&
             projectList[activeIndex].image.map((e, index) => {
               return (
                 <div className="h-5/6 w-auto py-3" key={index}>
@@ -59,16 +59,16 @@ const ProjectExperience = () => {
       </div>
       <div className="h-[30%] border-solid border-t-zinc-800 border-t-2">
         <div className="mt-1 font-bold text-base underline">
-          {projectList[activeIndex].name}
+          {projectList?.[activeIndex]?.name}
         </div>
         <div className="text-pretty  overflow-y-scroll h-5/6">
           <div className="indent-5 text-sm">
-            {projectList[activeIndex].description}
+            {projectList?.[activeIndex]?.description}
           </div>
           <div className="mt-1 font-bold text-base underline">
             Responsibility
           </div>
-          {projectList[activeIndex]?.responsibility?.length &&
+          {projectList?.[activeIndex]?.responsibility?.length &&
             projectList[activeIndex].responsibility.map((e, index) => {
               return (
                 <div key={index} className="flex text-sm mt-1">
