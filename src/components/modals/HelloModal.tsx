@@ -19,7 +19,7 @@ const HelloModal = ({ luckyNumber }: IHelloModal) => {
         {luckyNumber}
       </div>
       <div className="flex text-xl">
-        <div>Hello, visitor number {luckyNumber}. Glad to meet you here.</div>
+        <div>Hello, visitor number {luckyNumber}. Glad to see you here.</div>
       </div>
       <div className="text-xs mt-4 text-zinc-600">Click outside to close.</div>
     </div>
