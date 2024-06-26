@@ -41,7 +41,7 @@ const ProjectExperience = () => {
           {projectList?.[activeIndex]?.image &&
             projectList[activeIndex].image.map((e, index) => {
               return (
-                <div className="h-5/6 w-auto py-3" key={index}>
+                <div className="h-5/6 py-3" key={index}>
                   <img className="h-full" alt={`project-${index}`} src={e} />
                 </div>
               );
